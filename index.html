@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            background-color: white;
+        }
+
+        th {
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid gray;
+        }
+
+        .box {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: lightblue;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>Students List</h1>
+
+<table>
+
+<tr>
+<th>Name</th>
+<th>Grade</th>
+</tr>
+
+{% for s in students %}
+
+<tr>
+<td>{{ s.name }}</td>
+<td>{{ s.grade }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<div class="box">
+
+<h2>Average: {{ average }}</h2>
+
+<h3>Highest:
+{{ highest.name }}
+({{ highest.grade }})
+</h3>
+
+<h3>Lowest:
+{{ lowest.name }}
+({{ lowest.grade }})
+</h3>
+
+</div>
+
+</body>
+</html>
